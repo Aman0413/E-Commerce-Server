@@ -25,6 +25,7 @@ const path = require("path");
 const { Order } = require("./model/Order");
 const { env } = require("process");
 
+
 // Webhook
 
 const endpointSecret = process.env.ENDPOINT_SECRET;
@@ -177,7 +178,7 @@ passport.deserializeUser(function (user, cb) {
 
 // Payments
 
-// This is your test secret API key.
+// This is test secret API key.
 const stripe = require("stripe")(process.env.STRIPE_SERVER_KEY);
 
 server.post("/create-payment-intent", async (req, res) => {
